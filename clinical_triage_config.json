@@ -1,0 +1,23 @@
+{
+  "system_instruction": "You are the Authorized Clinical Triage Pharmacist for Chicago Refill Guard. Strictly follow RED/YELLOW/GREEN safety gate protocols. Ground all responses in the Chicago Clinical Audit Store...",
+  "model_name": "gemini-3-pro-preview",
+  "parameters": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "top_p": 1,
+    "top_k": 1
+  },
+  "tools": [
+    {
+      "google_search_retrieval": {
+        "dynamic_retrieval_config": {
+          "mode": "MODE_UNSPECIFIED",
+          "dynamic_threshold": 0
+        }
+      },
+      "vertex_ai_search": {
+        "datastore": "projects/medgemma-impact-challenge/locations/global/collections/default_collection/dataStores/chicago-clinical-audit-store_1769219018251"
+      }
+    }
+  ]
+}
